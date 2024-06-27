@@ -66,11 +66,13 @@ export const getQueryUnidad = async (req, res) => {
     try {
         const unidad = await UnidadModel.findAll({
             where: {
-                //aca falta
+                nombre: {
+                    [Sequelize.Op.like]: `%${req.params.nombre}%`
+                }
             }
         })
         res.json(unidad)
     } catch (error) {
-        
+        res.json({mesagge: error.mesagge})
     }
 }

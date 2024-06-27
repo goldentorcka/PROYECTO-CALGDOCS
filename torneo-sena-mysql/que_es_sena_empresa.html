@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿QUE ES SENA EMPRESA?</title>
+    <link rel="stylesheet" href="estilos/que_es_sena_empresa.css"> 
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <button id="regresarBtn" class="btn">Regresar</button> 
+            <h1>¿QUE ES SENA EMPRESA?</h1>
+        </div>
+        <div class="content">
+            <img src="img/descargar.jpeg" alt="Imagen de la empresa" class="image">
+            <p>
+                Es una estrategia que tiene como objetivo acercarse a la realidad de las empresas mediante la producción eficiente de bienes y servicios del Centro de Formación a través de la integración de los procesos productivos y la optimización del uso de los recursos del SENA, integrando de manera natural todas las actividades de las diferentes áreas de formación, trascendiendo a otras áreas como: la financiera y contable, administrativa y de recursos humanos, comercialización, mercadeo y logística, la de producción y control de calidad y la gerencial.
+            </p>
+            <p>
+                De esta manera, se articulan los aprendices de los programas de aprendizaje de las diferentes áreas. Igualmente, a través de esta estrategia, los aprendices rotan por los diferentes roles de esta empresa en un modelo evaluado y mejorado continuamente.
+            </p>
+        </div>
+    </div>
+    <script>
+        document.getElementById('regresarBtn').addEventListener('click', function() {
+            regresar();
+        });
+  
+        function regresar() {
+        window.location.href = "http://localhost:5173/"; 
+    }
+    </script>
+</body>
+</html>

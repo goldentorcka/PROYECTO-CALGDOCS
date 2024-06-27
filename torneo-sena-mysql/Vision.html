@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visión</title>
+    <link rel="stylesheet" href="estilos/visionstyles.css"> 
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <button id="regresarBtn" class="btn">Regresar</button> 
+            <h1>Visión</h1>
+        </div>
+        <div class="content">
+            <img src="img/Vision.jpeg" alt="Imagen de la empresa" class="image">
+            <p>
+                Para el año 2030, Sena Empresa continuará siendo el eje integrador de los procesos productivos y administrativos del Centro Agropecuario la Granja, fundamentada en la interacción entre el Aprender–Aprender, Aprender–Hacer y Aprender–Ser y la formación por proyectos. El Ciclo de Fortalecimiento Empresarial, propenderá por el desarrollo y fortalecimiento de las actividades que conduzcan a generar mentalidad emprendedora en los aprendices, buscando con esto aportar a sus comunidades de origen los conocimientos adquiridos, generando un impacto positivo y un mayor desarrollo económico en las regiones.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('regresarBtn').addEventListener('click', function() {
+            regresar();
+        });
+
+        function regresar() {
+        window.location.href = "http://localhost:5173/";
+    }
+    </script> 
+</body>
+</html>

@@ -1,0 +1,160 @@
+@charset "utf-8";
+* {
+    margin: 0px;
+    padding: 0px;
+}
+h1 {
+font: bold 20px verdana, geneva, sans-serif;
+}
+h2 {
+    font: bold 14px verdana, geneva, sans-serif;
+}
+body {
+    text-align: center;
+}
+#cuerpo{
+    width: 960px;
+    margin: 15px auto;
+    text-align: center;
+}
+#encabezado {
+    background-color: #deffb9;
+    border: 1px solid #85C1E9;
+    padding: 20px;
+    
+}
+#menu{
+    background-color: #cccccc;
+    padding: 5px 15px;
+}
+#seccion {
+    float: left;
+    width: 600px;
+    margin: 20px;
+}
+
+#lateral{
+    float: left;
+    width: 220px;
+    margin: 20px 0px;
+    padding: 20px;
+    border: solid 1px;
+    border-radius: 10px;
+}
+article {
+    background: #fffbcc;
+    border: 1px solid #999999;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+article footer {
+    text-align: right;
+}
+#menu li{
+    display: inline-block;
+    list-style: none;
+    padding: 5px;
+    font: bold 14px verdana, sans-serif;
+}
+#pie{
+    border: solid 1px #999999;
+    float: left;
+    width: 100%;
+    background: #cccccc;
+    padding: 15px 0;
+}
+
+input, select {
+    width: 200px;
+    margin: 8px 0px;
+    border-radius: 5px;
+    padding: 2px;
+}
+#botonForm{
+    background-color: darkcyan;
+    border-radius: 5px;
+    padding: 5px;
+}
+form{
+    text-align:left;
+}
+#menu ul li:hover{
+        background-color: rgb(0, 26, 255);
+        cursor:pointer;
+}
+#input {
+    width: 200px;
+}
+input:focus {
+    background-color:aqua;
+}
+.subMenu {
+    display: none;
+}
+#menu ul li:hover .subMenu {
+    display: block;
+    position: absolute;
+    background-color: #cccccc;
+    margin-top:5px;
+}
+.subMenu li{
+    display: list-item !important;
+}
+
+.subMenuDos{
+    display: none;
+    position:absolute;
+    left: 50px;
+    width : 150px;
+    margin-top: -15px;
+    margin-left: 32px;
+    background-color: #cccccc;
+}
+.subMenu li:hover .subMenuDos{
+    display:block;
+}
+.contenedor{
+    display: flex;
+    border: solid 1px rgb(254, 255, 255);
+    background-color: rgb(109, 176, 180);
+    padding: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 230px;
+    align-content: center;
+}
+
+.caja{
+    border: solid 1px rgb(0, 255, 221);
+    background-color: rgb(238, 238, 101);
+    color: blue;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    width: 100px;
+    height: 120px; 
+    line-height: 90px;
+    text-align: center;
+    margin: 2px;
+   
+}
+.c1{
+    background-color: rgb(0, 0, 0);
+    order: 2;
+    flex-grow: 1;
+}
+.c2{
+    background-color: rgb(0, 0, 0);
+    order: 2;
+    flex-grow: 1;
+}
+.c3{
+    background-color: rgb(0, 0, 0);
+    order: 3;
+    flex-grow: 1;
+}
+.c4{
+    background-color: rgb(0, 0, 0);
+    order: 4;
+    flex-grow: 1;
+}

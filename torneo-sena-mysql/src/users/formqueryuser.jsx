@@ -1,5 +1,6 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
+import "/VITE-REACT-MYSQL/torneo-sena-mysql/estilos/estilosformqueryuser.css"
 
 const FormQueryUser = ({ URI, getUser, deleteUser, buttonForm }) => {
     const [userQuery, setUserQuery] = useState([])
@@ -44,18 +45,22 @@ const FormQueryUser = ({ URI, getUser, deleteUser, buttonForm }) => {
                             <th>Nombres</th>
                             <th>Apellidos</th>
                             <th>Correo</th>
-                            <th>tipo_de_usuario</th>
+                            <th>Contraseña</th>
+                            <th>Nombre de Usuario</th>
+                            <th>Fecha de Creacion</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
                         {userQuery.map((user) => (
                             <tr key={user.id}>
-                                <td>{user.documento}</td>
-                                <td>{user.nombres}</td>
-                                <td>{user.apellidos}</td>
-                                <td>{user.correo}</td>
-                                <td>{user.tipo_de_usuario}</td>
+                                <td>{user.Doc_User}</td>
+                                <td>{user.Nom_User}</td>
+                                <td>{user.Ape_User}</td>
+                                <td>{user.Cor_User}</td>
+                                <td>{user.Pas_User}</td>
+                                <td>{user.Nom_Usuario}</td>
+                                <td>{user.Fec_Creacion}</td>
                                 <td>
                                     <button onClick={() => deleteUser(user.id)}>Eliminar</button>
                                     <button onClick={() => getUser(user.id)}>Editar</button>

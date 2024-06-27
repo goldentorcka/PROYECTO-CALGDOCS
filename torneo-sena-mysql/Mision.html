@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Misión </title>
+    <link rel="stylesheet" href="estilos/misionstyles.css"> 
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <button id="regresarBtn" class="btn">Regresar</button> <!-- Botón para regresar -->
+            <h1>Misión</h1>
+        </div>
+        <div class="content">
+            <img src="img/Mision.jpg" alt="Imagen de la empresa" class="image">
+            <p>
+                Somos una estrategia didáctica empresarial para los aprendices del Sena, garantizando el fortalecimiento de su formación integral mediante procesos de innovación y aprendizaje permanente, contribuyendo al mejoramiento de la calidad del servicio que el Sena ofrece a los colombianos.
+            </p>
+        </div>
+    </div>
+    <script>
+      document.getElementById('regresarBtn').addEventListener('click', function() {
+          regresar();
+      });
+
+      function regresar() {
+      window.location.href = "http://localhost:5173/"; 
+  }
+  </script> 
+</body>
+</html>

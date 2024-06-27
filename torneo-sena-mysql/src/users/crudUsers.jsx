@@ -1,9 +1,11 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import FormUsers from './formusers'
 import Swal from 'sweetalert2';
-import FormQueryUser from './formqueryuser'
+import FormUsers from './formusers.jsx'
+import FormQueryUser from './formqueryuser.jsx'
+import "/VITE-REACT-MYSQL/torneo-sena-mysql/estilos/estiloscrudUsers.css"
+
 
 
 const URI = 'http://localhost:8000/users/'
@@ -15,12 +17,13 @@ const CrudUsers = () => {
 
     const [user, setUser] = useState({
         id: '',
-        documento: '',
-        nombres: '',
-        apellidos: '', 
-        correo: '',
-        direccion: '',
-        tipo_de_usuario: ''
+        Doc_User: '',
+        Nom_User: '',
+        Ape_User: '', 
+        Cor_User: '',
+        Pas_User: '',
+        Nom_Usuario: '',
+        Fec_User: ''
     })
 
     
@@ -35,9 +38,9 @@ const CrudUsers = () => {
     }
 
     
-    const getUser = async (idUser) => {
+    const getUser = async (id) => {
         setButtonForm('Enviar')
-        const respuesta = await axios.get(URI + idUser)
+        const respuesta = await axios.get(URI + id,)
         setButtonForm('Actualizar')
         setUser({
             ...respuesta.data
@@ -48,7 +51,7 @@ const CrudUsers = () => {
         setButtonForm(texto)
     }
 
-    const deleteUser = (idUser) => {
+    const deleteUser = (id) => {
         Swal.fire({
             title: "Perrito estas seguro?",
             text: "No podras revertir esto!",
@@ -59,7 +62,7 @@ const CrudUsers = () => {
             confirmButtonText: "Yes, delete it!"
           }).then(async(result) => {
             if (result.isConfirmed) {
-                await axios.delete(URI + idUser)
+                await axios.delete(URI + id)
               Swal.fire({
                 title: "Borrado!",
                 text: "El registro ha sido borrado.",
@@ -71,39 +74,43 @@ const CrudUsers = () => {
 
     return (
         <>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Documento</th>
-                        <th>Nombres</th>
-                        <th>Apellidos</th>
-                        <th>Correo</th>
-                        <th>Direccion</th>
-                        <th>Tipo-de-Usuario</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {usersList.map((user) => (
-                        <tr key={user.id}>
-                            <td>{user.documento}</td>
-                            <td>{user.nombres}</td>
-                            <td>{user.apellidos}</td>
-                            <td>{user.correo}</td>
-                            <td>{user.direccion}</td>
-                            <td>{user.tipo_de_usuario}</td>
-                            <td>
-                                <button onClick={() => getUser(user.id)}>Editar</button>
-                                <button onClick={() => deleteUser(user.id)}>Borrar</button>
-                            </td>
+            <div className='container'>
+                <table>
+                    <thead> 
+                        <tr>
+                            <th>Documento</th>
+                            <th>Nombres</th>
+                            <th>Apellidos</th>
+                            <th>Correo</th>
+                            <th>Contraseña</th>
+                            <th>Nombre de Usuario</th>
+                            <th>Fecha de Creacion</th>
+                            <th>Acciones</th>
                         </tr>
+                    </thead>
+                    <tbody>
+                        {usersList.map((user) => (
+                            <tr key={user.id}>
+                                <td>{user.Doc_User}</td>
+                                <td>{user.Nom_User}</td>
+                                <td>{user.Ape_User}</td>
+                                <td>{user.Cor_User}</td>
+                                <td>{user.Pas_User}</td>
+                                <td>{user.Nom_Usuario}</td>
+                                <td>{user.Fec_User}</td>
+                                <td>
+                                    <button onClick={() => getUser(user.id)}>Editar</button>
+                                    <button onClick={() => deleteUser(user.id)}>Borrar</button>
+                                </td>
+                            </tr>
                     ))}
                 </tbody>
-            </table>
-            <hr />
-            <FormUsers buttonForm={buttonForm} user={user} URI={URI} updateTextButton={updateTextButton} />
-            <hr />
-            <FormQueryUser URI={URI} getUser={getUser} deleteUser={deleteUser} buttonForm={buttonForm} />
+                </table>
+                <hr />
+                <FormUsers buttonForm={buttonForm} user={user} URI={URI} updateTextButton={updateTextButton} />
+                <hr />
+                <FormQueryUser URI={URI} getUser={getUser} deleteUser={deleteUser} buttonForm={buttonForm} />
+            </div>
         </>
     )
 }

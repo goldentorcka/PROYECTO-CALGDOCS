@@ -2,7 +2,7 @@ import db from "../database/db.js";
 import { DataTypes } from "sequelize";
 
 const FormatoModel = db.define('formatos', {
-    id_formato: {
+    id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
@@ -10,7 +10,11 @@ const FormatoModel = db.define('formatos', {
     nom_formato: { type: DataTypes.STRING },
     cod_formato: { type: DataTypes.STRING },
     ver_formato: { type: DataTypes.STRING },
-    est_formato: { type: DataTypes.STRING },
+    ver_formato: {
+        type: DataTypes.ENUM('Activo', 'Inactivo'),
+        allowNull: false, // Opcional, dependiendo de tus resquisitos de negocio
+        defaultValue: 'Activo' // Valor por defecto, opcional
+    },
     id_responsable: { type: DataTypes.INTEGER },
     archivo: { type: DataTypes.BLOB },
     nom_magnetico: { type: DataTypes.STRING },

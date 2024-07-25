@@ -10,10 +10,7 @@ const FormQueryFormat = ({ URI, getFormato, deleteFormato, buttonForm }) => {
             const respuesta = await axios.get(URI + 'nombre/' + nomFormato);
             console.log(respuesta.data);
 
-            setFormatoQuery(
-                respuesta.data
-            );
-
+            setFormatoQuery(respuesta.data);
             console.log(formatoQuery.length);
         } else {
             setFormatoQuery([]);

@@ -1,11 +1,11 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import FormFormat from './formFormat.jsx';
+import formFormat from './formFormat.jsx';
 import FormQueryFormat from './formqueryFormat.jsx';
 
-const URI = 'http://localhost:8000/formatos/';
+const URI = 'http://localhost:8000/formatos/'
 
 const CrudFormats = () => {
     const [formatosList, setFormatosList] = useState([]);
@@ -106,11 +106,11 @@ const CrudFormats = () => {
                 </tbody>
             </table>
             <hr />
-            <FormFormat buttonForm={buttonForm} formato={formato} URI={URI} updateTextButton={updateTextButton} />
+            <formFormat buttonForm={buttonForm} formato={formato} URI={URI} updateTextButton={updateTextButton} />
             <hr />
             <FormQueryFormat URI={URI} getFormato={getFormato} deleteFormato={deleteFormato} buttonForm={buttonForm} />
         </>
     );
 };
 
-export default CrudFormats
+export default CrudFormats;

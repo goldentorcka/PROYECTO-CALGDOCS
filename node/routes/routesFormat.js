@@ -1,8 +1,6 @@
 import express from "express";
 import { createFormato, deleteFormato, getAllFormatos, getFormato, updateFormato, getQueryFormato } from "../controllers/formatController.js";
-
 const router = express.Router();
-
 
 router.get('/', getAllFormatos);
 router.get('/:id', getFormato);

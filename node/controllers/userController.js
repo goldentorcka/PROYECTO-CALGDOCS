@@ -1,14 +1,18 @@
 import { Sequelize } from "sequelize";
 import UserModel from "../models/userModel.js";
+import { logger } from "../config/logger.js";
 
 export const getAllUsers = async (req, res) => {
-    try {
-        const users = await UserModel.findAll()
-        res.json(users)
-    } catch (error) {
-        res.json({ message: error.message })
-    }
-}
+  try {
+    throw new Error('This is a test error'); // Forzar un error para probar el logging
+    const users = await UserModel.findAll();
+    res.json(users);
+  } catch (error) {
+    logger.error(error.message, { stack: error.stack });
+    res.json({ message: error.message });
+  }
+};
+
 
 
 

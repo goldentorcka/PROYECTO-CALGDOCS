@@ -4,13 +4,28 @@ import db from './database/db.js';
 import userRoutes from './routes/routesUsers.js';
 import areaRoutes from './routes/routesArea.js';
 import formatRoutes from './routes/routesFormat.js';
-//Aca va la importacion de la rutas de la tabla
-const app = express()
+import { logger } from './config/logger.js';
+
+//Aca va la importacion de la rutas de la tabla y del log
+const app = express();
+const port = 3001;
+const routes = require('./    ');////////////////////////////////aca voy
 app.use(cors())
-app.use(express.json())
+app.use(express.json()) 
 app.use('/users', userRoutes)
 app.use('/area', areaRoutes)
 app.use('/formatos', formatRoutes)
+
+app.use((err, req, res, next) => {
+    logger.error(err.message, { stack: err.stack });
+    res.status(500).json({ message: 'Internal Server Error' });
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
+
 
 
 try {

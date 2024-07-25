@@ -1,87 +1,152 @@
-/* General styles */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+/* Reset de estilos básico */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    color: #333;
 }
 
-/* Container */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
 .container {
     max-width: 800px;
-    margin: 20px auto;
-    background-color: #fff;
+    margin: 40px auto;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
 }
 
-/* Header */
+.container:hover {
+    transform: translateY(-5px);
+}
+
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid #007BFF;
+    border-bottom: 2px solid #6BA292; /* Color más suave */
     padding-bottom: 10px;
     margin-bottom: 20px;
 }
 
 .header h1 {
-    margin: 0;
-    font-size: 24px;
-    color: #007BFF;
+    font-size: 2em;
+    color: #6BA292; /* Color más suave */
+    animation: slideInLeft 1s ease-in-out;
 }
 
-.header .btn {
-    background-color: #007BFF;
+.btn {
+    background-color: #6BA292; /* Color más suave */
     color: white;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-.header .btn:hover {
-    background-color: #0056b3;
+.btn:hover {
+    background-color: #5a8c79; /* Color más suave */
+    transform: scale(1.05);
 }
 
-/* Content */
 .content {
-    text-align: center;
-}
-
-.content .image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 20px;
-}
-
-.content p {
-    font-size: 18px;
-    line-height: 1.6;
     text-align: justify;
 }
 
-/* Responsive Design */
-@media (max-width: 600px) {
-    .header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+.image {
+    max-width: 100%;
+    border-radius: 15px;
+    margin: 0 auto 20px auto; /* Centra la imagen horizontalmente */
+    display: block; /* Asegura que la imagen se comporte como un bloque */
+    animation: zoomIn 1s ease-in-out;
+}
 
-    .header h1 {
-        margin-bottom: 10px;
-        font-size: 20px;
-    }
+.content p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #555;
+    animation: fadeIn 1.5s ease-in-out;
+}
 
-    .header .btn {
-        padding: 8px 16px;
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
     }
+    to {
+        opacity: 1;
+    }
+}
 
-    .content p {
-        font-size: 16px;
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
     }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.5);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes bounceIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes rotateIn {
+    from {
+        transform: rotate(-360deg);
+        opacity: 0;
+    }
+    to {
+        transform: rotate(0);
+        opacity: 1;
+    }
+}
+
+/* Nuevas animaciones para elementos adicionales */
+.header h1 {
+    font-size: 2em;
+    color: #6BA292; /* Color más suave */
+    animation: rotateIn 1s ease-in-out;
+}
+
+.image {
+    max-width: 100%;
+    border-radius: 15px;
+    margin: 0 auto 20px auto;
+    display: block;
+    animation: bounceIn 1s ease-in-out;
+}
+
+.content p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #555;
+    animation: fadeIn 1.5s ease-in-out;
 }

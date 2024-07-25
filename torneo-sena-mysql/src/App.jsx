@@ -10,7 +10,7 @@ function App() {
 
   return (
     <>
-      <div className='container'>
+      <div className='container1'>
         <nav>
           <ul>
             <li>
@@ -21,9 +21,6 @@ function App() {
             </li>
             <li>
               <Link to="/formatos">Formato</Link>
-            </li>
-            <li>
-              <Link to="/auth">Sesion</Link>
             </li>
             <li>
               <Link to="/administrador">Modulo Administrador</Link>
@@ -38,6 +35,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/users" element={<CrudUsers />} />
           <Route path="/formatos" element={<CrudFormats />} />
+          <Route path="/auth" element={<CrudFormats />} />
         </Routes>
       </div>
     </>

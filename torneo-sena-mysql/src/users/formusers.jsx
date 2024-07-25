@@ -2,7 +2,7 @@ import { Button } from "bootstrap";
 import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
-import "/VITE-REACT-MYSQL/torneo-sena-mysql/estilos/estilosformuser.css"
+import "/VITE-REACT-MYSQL/torneo-sena-mysql/estilos/estilosformuser.css";
 
 const FormUsers = ({ buttonForm, user, URI, updateTextButton }) => {
 
@@ -101,7 +101,7 @@ const FormUsers = ({ buttonForm, user, URI, updateTextButton }) => {
                     <input type="date" id="fecha_de_Creacion" value={Fec_User} onChange={(e) => setFec_User(e.target.value)} />
                     <br />
                     
-                    <input type="submit" id="boton" value={buttonForm} className="btn btn_success" />
+                    <input type="submit" id="boton" value={buttonForm} className="btn_btn_success" />
                 </form>
             </div>
         </>

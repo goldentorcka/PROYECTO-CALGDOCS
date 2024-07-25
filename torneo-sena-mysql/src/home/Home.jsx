@@ -1,3 +1,4 @@
+import "/VITE-REACT-MYSQL/torneo-sena-mysql/estilos/estilosHome.css"
 const Home = () => {
     return (
         <>
@@ -20,9 +21,6 @@ const Home = () => {
                     </footer>
                 </div>
             </body>
-
-            
-
         </>
 )}
 export default Home 

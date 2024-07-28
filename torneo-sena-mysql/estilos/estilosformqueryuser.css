@@ -1,4 +1,4 @@
-/* Reset de estilos básico */
+/* Reset de estilos básico
 * {
     box-sizing: border-box;
     margin: 0;
@@ -113,4 +113,4 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
     background-color: #3e8e41;
-}
+} */

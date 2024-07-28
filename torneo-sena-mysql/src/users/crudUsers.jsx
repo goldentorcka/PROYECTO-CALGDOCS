@@ -17,13 +17,10 @@ const CrudUsers = () => {
 
     const [user, setUser] = useState({
         id: '',
-        Doc_User: '',
-        Nom_User: '',
-        Ape_User: '', 
-        Cor_User: '',
-        Pas_User: '',
         Nom_Usuario: '',
-        Fec_User: ''
+        Cor_Usuario: '',
+        Pas_Usuario: '', 
+        Fch_Creacion: '',
     })
 
     
@@ -53,7 +50,7 @@ const CrudUsers = () => {
 
     const deleteUser = (id) => {
         Swal.fire({
-            title: "Perrito estas seguro?",
+            title: "¿Estas seguro?",
             text: "No podras revertir esto!",
             icon: "warning",
             showCancelButton: true,
@@ -78,12 +75,9 @@ const CrudUsers = () => {
                 <table>
                     <thead> 
                         <tr>
-                            <th>Documento</th>
                             <th>Nombres</th>
-                            <th>Apellidos</th>
                             <th>Correo</th>
                             <th>Contraseña</th>
-                            <th>Nombre de Usuario</th>
                             <th>Fecha de Creacion</th>
                             <th>Acciones</th>
                         </tr>
@@ -91,13 +85,10 @@ const CrudUsers = () => {
                     <tbody>
                         {usersList.map((user) => (
                             <tr key={user.id}>
-                                <td>{user.Doc_User}</td>
-                                <td>{user.Nom_User}</td>
-                                <td>{user.Ape_User}</td>
-                                <td>{user.Cor_User}</td>
-                                <td>{user.Pas_User}</td>
                                 <td>{user.Nom_Usuario}</td>
-                                <td>{user.Fec_User}</td>
+                                <td>{user.Cor_Usuario}</td>
+                                <td>{user.Pas_Usuario}</td>
+                                <td>{user.Fch_Creacion}</td>
                                 <td>
                                     <button onClick={() => getUser(user.id)}>Editar</button>
                                     <button onClick={() => deleteUser(user.id)}>Borrar</button>

@@ -1,0 +1,27 @@
+.app {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  
+  .c-header {
+    background-color: #343a40;
+    color: white;
+  }
+  
+  .c-header-brand {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .c-container {
+    padding: 20px;
+    background-color: #f8f9fa;
+    flex-grow: 1;
+  }
+  

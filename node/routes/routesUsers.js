@@ -3,13 +3,20 @@ import { createUser, deleteUser, getAllUsers, getUser, updateUser, getQueryUser 
 const router = express.Router()
 
 // router.get('/', getAllUsers)
+// router.get('/', async (req, res, next) => {
+//     try {
+//       await getAllUsers(req, res);
+//     } catch (error) {
+//       next(error);
+//     }
+//   });
 router.get('/', async (req, res, next) => {
-    try {
+  try {
       await getAllUsers(req, res);
-    } catch (error) {
-      next(error);
-    }
-  });
+  } catch (error) {
+      next(error); // Pasa el error al middleware de manejo de errores
+  }
+});
 router.get('/:id', getUser)
 router.post('/', createUser)
 router.put('/:id', updateUser)

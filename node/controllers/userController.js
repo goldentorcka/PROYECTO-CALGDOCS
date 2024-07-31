@@ -32,19 +32,19 @@ export const getUser = async (req, res) => {
             where: { id: req.params.id }
         });
 
-        // Verificar si se encontró el usuario
-        if (user) {
-            // Responder con el usuario y código de estado 200 (OK)
-            res.status(200).json(user);
-        } else {
-            // Responder con un mensaje y código de estado 404 (No encontrado)
-            res.status(404).json({ message: "Usuario no encontrado" });
+        // Validar si se encontró el usuario
+        if (user === null) {
+            // Responder con código de estado 404 y mensaje si no se encontró el usuario
+            return res.status(404).json({ message: "Usuario no encontrado" });
         }
+
+        // Si se encontró el usuario, responder con el usuario y código de estado 200
+        res.status(200).json(user);
     } catch (error) {
-        // Registrar el error
+        // Registrar el error en un archivo log
         logger.error(error.message, { stack: error.stack });
         
-        // Responder con un mensaje de error y código de estado 500 (Error interno del servidor)
+        // Responder con código de estado 500 y mensaje de error
         res.status(500).json({ message: "Error interno del servidor" });
     }
 }
@@ -52,24 +52,31 @@ export const getUser = async (req, res) => {
 
 export const createUser = async (req, res) => {
     try {
-        // Validar los datos de entrada si es necesario
+        // Validar los datos de entrada
         if (!req.body || Object.keys(req.body).length === 0) {
             return res.status(400).json({ message: "Datos de entrada inválidos" });
         }
 
         // Crear un nuevo usuario con los datos proporcionados
-        await UserModel.create(req.body);
-        
+        const newUser = await UserModel.create(req.body);
+
+        // Verificar si el usuario fue creado exitosamente
+        if (!newUser) {
+            return res.status(500).json({ message: "No se pudo crear el usuario" });
+        }
+
         // Responder con un mensaje de éxito y código de estado 201 (Creación exitosa)
         res.status(201).json({ message: "Registro creado exitosamente!" });
     } catch (error) {
-        // Registrar el error si es necesario
+        // Registrar el error en un archivo log
         logger.error(error.message, { stack: error.stack });
         
         // Responder con un mensaje de error y código de estado 500 (Error interno del servidor)
         res.status(500).json({ message: "Error interno del servidor" });
     }
 }
+
+
 
 
 export const updateUser = async (req, res) => {

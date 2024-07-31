@@ -3,7 +3,7 @@ const Home = () => {
     return (
         <>
             <body>
-                <div className="container">
+                {/* <div className="container">
                     <header>
                         <h1>Cosas Importantes</h1>
                     </header>
@@ -19,7 +19,7 @@ const Home = () => {
                     <footer>
                         <p>&copy; 2024 Tu Empresa</p>
                     </footer>
-                </div>
+                </div> */}
             </body>
         </>
 )}

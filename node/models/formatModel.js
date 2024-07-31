@@ -22,7 +22,7 @@ const FormatoModel = db.define('formatos', {
     id_procedimiento: { type: DataTypes.INTEGER },
     id_unidad: { type: DataTypes.INTEGER }
 }, {
-    tableName: 'formatos',  // Nombre de la tabla en la base de datos
+    tableName: 'formato',  // Nombre de la tabla en la base de datos
     timestamps: false       // Desactivar timestamps automáticos (createdAt, updatedAt)
 });
 

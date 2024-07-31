@@ -1,6 +1,10 @@
 {
   "dependencies": {
+    "@coreui/coreui": "^5.1.0",
+    "@coreui/icons": "^3.0.1",
+    "@coreui/react": "^5.2.0",
     "dotenv": "^16.4.5",
+    "react-router-dom": "^6.25.1",
     "winston": "^3.13.1",
     "winston-daily-rotate-file": "^5.0.0"
   }
